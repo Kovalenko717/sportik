@@ -1,0 +1,29 @@
+{% extends 'baseforadm.html' %}
+{% block content %}
+{{ super()}}
+<div class="album py-5 bg-light">
+    <div class="container">
+      <ul class="list-posts">
+          <a <button href="/addevent" type="button" class="btn btn-warning" style="background-color: lightblue ; border-color: lightblue ">Добавить тренировку</button></a>
+          <p>   </p>
+        {% for i in show_rasp %}
+        <li>
+          <p class="title">Тренировка №{{i.numb}}</a></p>
+             <p class="annonce"> Начало: {{ i.date_start}}</p>
+              <p class="annonce"> Окончание: {{ i.date_finish}}</p>
+             <tr>
+                 <td>Вид спорта: </td>
+                 <td>{{ show_sport[(i.id_sport)-1].sport_name }}</td>
+             </tr>
+
+             <p> <tr>
+                 <td>Зал: </td>
+                 <td>{{ show_gym[(i.id_gym)-1].gym_name }}</td>
+             </tr>
+          <p><a href="{{ url_for('deleteevent', id_deleteevent=i.numb )}}">Удалить объявление</a></p>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+</div>
+{% endblock %}

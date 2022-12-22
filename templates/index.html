@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вход</title>
+</head>
+<body>
+<tbody>
+{% extends 'aboutus.html' %}
+{% for row in list_users %}
+<tr>
+    <td> {{row[0]}} </td>>
+    <td> {{row[1]}} </td>>
+    <td> {{row[2]}} </td>>
+
+</tr>>
+{% endfor %}
+</tbody>>
+</body>
+</html>

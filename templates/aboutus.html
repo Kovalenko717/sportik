@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <h1>Спорт - это жизнь!</h1>
+        <div>
+            <table>
+                <tr>
+                    <td>Добро пожаловать на сайт нашего спортивного центра! Теперь, чтобы заниматься любимым видом спорта, можно записаться онлайн! Пройдите регистрацию или войдите в учетную запись и выбирайте подходящее время трениривки в разделе "расписание." Мы ждём Вас!</td>
+                </tr>
+            </table>
+
+            <p> <a <button href="{{url_for('login')}}" type="button" class="btn btn-warning" style="background-color: lightblue ; border-color: lightblue ">Войти</button></a> </p>
+             <p><a href="{{url_for('registration')}}">Регистрация</a>
+            {% endblock %}
+        </div>
+    </div>
+</div>

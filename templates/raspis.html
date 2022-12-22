@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super()}}
+<div class="album py-5 bg-light">
+    <div class="container">
+      <ul class="list-posts">
+        {% for i in show_rasp %}
+        <li>
+          <p class="title">Тренировка №{{i.numb}}</a></p>
+             <p class="annonce"> Начало: {{ i.date_start}}</p>
+              <p class="annonce"> Окончание: {{ i.date_finish}}</p>
+             <tr>
+                 <td>Вид спорта: </td>
+                 <td>{{ show_sport[(i.id_sport)-1].sport_name }}</td>
+             </tr>
+
+             <p> <tr>
+                 <td>Зал: </td>
+                 <td>{{ show_gym[(i.id_gym)-1].gym_name }}</td>
+             </tr>
+        </li>
+          {% if number_train %}
+          {% for c in number_train if c.numb==i.numb %}
+          {% else %}
+          <a <button href="{{url_for('accept', id_accept=i.numb)}}" type="button" class="btn btn-warning" style="background-color: lightblue ; border-color: lightblue ">Присоединиться</button></a>
+          {% endfor %}
+          {% else %}
+
+          <a <button href="{{url_for('accept', id_accept=i.numb)}}" type="button" class="btn btn-warning" style="background-color: lightblue ; border-color: lightblue ">Присоединиться</button></a>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+</div>
+{% endblock %}
+
+

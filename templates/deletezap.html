@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="text-align:center">
+<h2>Вы дейсвительно хотите отменить запись?</h2>
+    <form method="post">
+        <a <button type="button" href="/profile" class="btn btn-light text-dark me-2" style="background-color: red ; border-color:red">Нет</button></a>
+        <input class="btn btn-warning" type="submit" style="background-color: lightgrey ; border-color:lightgrey" name="yes" class="btn btn-success" value="Да"/>
+        </form>
+</div>
+
+{% endblock %}

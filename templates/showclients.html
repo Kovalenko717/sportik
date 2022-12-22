@@ -1,0 +1,15 @@
+{% extends 'baseforadm.html' %}
+{% block content %}
+{{ super()}}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <ul class="list-posts">
+          {% for i in show_train %}
+          <li>
+              <h2><p class="title">Тренировка №{{i.numb}}</p></h2>
+          </li>
+          {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

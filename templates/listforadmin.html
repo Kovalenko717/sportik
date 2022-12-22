@@ -1,0 +1,20 @@
+{% extends 'baseforadm.html' %}
+{% block content %}
+{{ super()}}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <ul class="list-posts">
+          {% for i in user %}
+          <li>
+              <p class="annonce"> Имя: {{ i.client_name}}</p>
+              <p class="annonce"> Логин: {{ i.client_login}}</p>
+              <p class="cost"> Телефон: {{ i.client_phone}}</p>
+              <p class="annonce"> О себе: {{ i.client_text}}</p>
+              <a href="{{ url_for('showclients', id_prof=i.id_client)}}">Записи пользователя</a></p>
+               <p> <a <button  href="{{ url_for('deleteuser', id_deleteuser=i.id_client)}}" type="button" class="btn btn-warning" style="background-color: coral; border-color: coral">Удалить пользователя</button></a>
+          </li>
+          {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

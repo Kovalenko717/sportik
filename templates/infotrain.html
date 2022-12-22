@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{{ super() }}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <ul class="list-posts">
+          {% for i in show_train %}
+           <h2><p class="title">Тренировка №{{i.numb}}</p></h2>
+            {% endfor %}
+            {% if session['id_user'] %}
+                <p> <tr>
+                    <td>Начало:</td>
+                    <td>{{ show_train[0].date_start }}</td>
+                </tr> </p>
+                 <p> <tr>
+                    <td>Окончание:</td>
+                    <td>{{ show_train[0].date_finish }}</td>
+                </tr> </p>
+
+                <p> <tr>
+                    <td>Вид спорта: </td>
+                    <td>{{ show_sport[0].sport_name }}</td>
+                </tr> </p>
+                <p> <tr>
+                    <td>Зал: </td>
+                    <td>{{ show_gym[0].gym_name }}</td>
+                </tr> </p>
+            {% endif %}
+            </table>
+        </ul>
+    </div>
+</div>
+{% endblock %}

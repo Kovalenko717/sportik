@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{{ super()}}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <ul class="list-posts">
+           <p style="font-size:24px"> Свяжитесь с нами, если есть вопросы!</p>
+          {% for i in user %}
+          <li>
+              <p class="annonce"> Имя: {{ i.adm_name}}</p>
+              <p class="cost"> Телефон: {{ i.adm_phone}}</p>
+              <p class="annonce"> E-mail: {{ i.adm_email}}</p>
+          </li>
+          {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

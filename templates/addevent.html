@@ -1,0 +1,34 @@
+{% extends 'baseforadm.html' %}
+{% block title %}
+Расписание
+{% endblock %}
+
+{% block body %}
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row"><h2> Расписание </h2></div>
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+            </div>
+                    <form action="/addevent" method="post" class="form-contact">
+
+
+                        <p><label>Начало: </label> <input type="datetime-local" name="date_start" value="" requied />
+                        <p><label>Окончание: </label> <input type="datetime-local" name="date_finish" value="" requied />
+                        <p> Вид спорта: <SELECT name="id_sport">
+                            {% for c in list_sport %}
+	                        <OPTION value={{c.id_sport}}>{{c.sport_name}} </option>
+                            {% endfor %}
+                        </SELECT>
+                        <p> Зал: <SELECT name="id_gym">
+                            {% for c in list_gym %}
+	                        <OPTION value={{c.id_gym}}>{{c.gym_name}} </option>
+                            {% endfor %}
+                        </SELECT>
+                        <p><input type="submit" value="Опубликовать" />
+                    </form>
+    </div>
+</div>
+{% endblock %}
